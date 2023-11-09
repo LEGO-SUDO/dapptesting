@@ -1,23 +1,13 @@
-import logo from './logo.svg';
-import './App.css';
+import Home from "./pages/Home";
+import { useTriaConnector } from "@tria-sdk/connect";
+
 
 function App() {
+  const { globalData } = useTriaConnector({ walletUrl: "https://auth-7rin.vercel.app" });
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="bg-black h-[100vh] w-[100vw]">
+      <Home/>
     </div>
   );
 }
